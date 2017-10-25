@@ -9,7 +9,7 @@ class TypedReact extends React.Component {
     // You can pass other options here, such as typing speed, back speed, etc.
     const options = {
     	strings: strings,
-      typeSpeed: 25,
+      typeSpeed: 5,
       backSpeed: 50,
       showCursor: false,
       onComplete: (...args) => {

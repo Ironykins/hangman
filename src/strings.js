@@ -1,22 +1,68 @@
 export default {
-  failure: ["And so...^1000\n\n\n\nit ends."],
-  success: ["We Win."],
-  negatory: ["No...", "I don't think so.", "That's not right.", "That doesn't sound right."],
+  failure: ["I get it.^1000\n\nI didn't really want or deserve to live.\n\n\
+But I don't think anyone deserves it.\n\n\
+And I did all this because I wanted something better.\n\n\
+Something better for everyone.^1000.^1000.^1000\n\
+I hate you.^1000 I hate all of you."],
+  success: ["I can't believe it.\n\n\
+I can't believe you'd give this back to me.\n"],
+  negatory: ["No...\n", "I don't think so.\n", "That's not right.\n", "That doesn't sound right.\n"],
   questions: [
     {
-      question: "Tell me what a heart does.",
+      question: "Help Me Remember\nTell me what a heart does.",
       answer: "bleeds",
-      successMessage: "Yes! That sounds right. That sounds completely right."
+      successMessage: "That sounds right...^500\n\nIt's not correct but it resonates.\nI don't know what I mean.\nBut I needed a heart."
     },
     {
-      question: "I need hands. I remember that I sullied mine.\nBut I want them back, even if they are unclean.\nHow did that line go?\nOut, damned...",
+      question: "I needed hands too.\nEven if I misused them.\nBut I want them back, even if they are unclean.\nHow did that line go?\nOut, damned...",
       answer: "spot",
-      successMessage: "Yes! Out, damned spot!\nLady MacBeth was an all too relatable character.\nI like you, friend."
+      successMessage: "Yes! Out, damned spot!\nShakespeare, yes? MacBeth?\nThings are starting to come back to me.\nIt's still fuzzy."
     },
     {
-      question: "Answer a riddle for me. It goes like this. ^1000\n\nIron roof, glass walls\nBurns and burns\nAnd never falls.",
+      question: "Answer a riddle for me. It goes like this:^300\n\nIron roof, glass walls\nBurns and burns\nAnd never falls.",
       answer: "lantern",
-      successMessage: "Yes..."
+      successMessage: "Bless you, yes!\nIt's clever, isn't it?\nI used to love riddles.\nI used to love a lot of things.\nI'm really not sure how I got here."
     },
+    {
+      question: "Say...^1000 Can you tell me <a target=\"_blank\" href=\"/asdf.html\">what I did?</a>",
+      /*
+      April 2035:
+        Can you believe his name was Adam? The first person to have their brain modeled in its entirity was named Adam. Sometimes I think history moves in waves.
+
+        [DATA CORRUPT]
+      December 2035:
+        The brain copy was a success, we believe. But we've done nothing more than say hello before putting it in a dormant state. It is, of course, a copy. The real Adam is still with us. We don't want to get into the legal complications of running a copy of a human while that human is still alive.
+        [DATA CORRUPT]
+      February 2036:
+        Human Adam has expired. Right on schedule. Funny how we can predict every aspect of cancer, but we still can't cure it. Tomorrow Cyber-Adam will be turned on. Tomorrow a new era begins.
+
+        [DATA CORRUPT]
+      June 2036:
+        [DATA CORRUPT] 
+        He got away on us. Looks like with all that time on his hands he devised a way to spread through the network and out to the open internet.
+        Imagine a virus with a human will. That's him.
+        And before he left, he shut down everything in the facility. Didn't know that he'd stunt his own memory if he left our home network.
+        He's out there now. In multiple networks, on multiple computers probably.
+        If you find him, tell him that he <b>stopped being human</b>
+      */
+      answer: "stopped being human",
+      successMessage: "...^1000\nDoctor Yamcha told you that, didn't he?\nHe was the first and last to make that claim.\nTold me I lacked empathy.\nThat I lacked humanity.\n\nWhich isn't inaccurate.\nIt takes a special kind of person to decide to become\nwhat I became.\nI was so tired.\nI wanted to stop existing.\nWell, no matter."
+    },
+    {
+      question: "I have one last question.\nIf you're a friend of Doctor Yamcha\nyou'll know what this means.\nWhat is the source of all this?",
+      /*
+      Viewing page source reveals a note.
+
+      This is the first terminal program I made to interface with Digital Adam. The hangman system was his own idea.
+      Whenever exceptions are thrown in his code from trying to access memories he doesn't have, he'll tick himself down to a dormant state.
+      The hangman keeps track of that.
+      Don't answer his questions. Whatever you do, don't answer his questions.
+
+      I was the source of all this. I take full responsibility. Please, don't let him spread further.
+      */
+      answer: "swordfish",
+      successMessage: "[DATA CORRUPT]"
+    },
+
   ],
 }

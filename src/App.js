@@ -20,9 +20,10 @@ class App extends Component {
     }
 
     this.state = {
+      messageCounter: 1,
       hangmanState: 0,
       questionState: 0,
-      messageLog: [<TypedReact key="first" strings={[strings.questions[0].question]} onComplete={this.enableTerm.bind(this)}/>]
+      messageLog: [<TypedReact key={0} strings={[strings.questions[0].question]} onComplete={this.enableTerm.bind(this)}/>]
     }
 
     this.console = {};
@@ -58,8 +59,9 @@ class App extends Component {
   }
 
   logResponse(text) {
-    var newMessage = <TypedReact key={text} strings={[text]} onComplete={this.enableTerm.bind(this)}/>
-    this.setState({messageLog: [newMessage,...this.state.messageLog]})
+    console.log(this.state.messageCounter)
+    var newMessage = <TypedReact key={this.state.messageCounter} strings={[text+"\n"]} onComplete={this.enableTerm.bind(this)}/>
+    this.setState({messageLog: [newMessage,...this.state.messageLog], messageCounter: this.state.messageCounter+1})
   }
 
   componentDidUpdate() {
