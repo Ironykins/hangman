@@ -1,6 +1,7 @@
 .App {
   text-align: center;
-  background: 'white'
+  background: 'white';
+  word-wrap: 'break-word';
 }
 
 /* Adding CSS manually is only necessary in JSFiddle,

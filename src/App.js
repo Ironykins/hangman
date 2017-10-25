@@ -21,10 +21,9 @@ class App extends Component {
 
     this.state = {
       hangmanState: 0,
-      questionState: 0
+      questionState: 0,
+      messageLog: [<TypedReact key="first" strings={[strings.questions[0].question]} onComplete={this.enableTerm.bind(this)}/>]
     }
-
-    this.messageLog = [<TypedReact strings={[strings.questions[this.state.questionState].question]} onComplete={this.enableTerm.bind(this)}/>];
 
     this.console = {};
   }
@@ -54,11 +53,13 @@ class App extends Component {
   }
 
   enableTerm() {
+    this.setState({started:true})
     if(this.console) this.console.return();
   }
 
   logResponse(text) {
-    this.messageLog.push(<TypedReact strings={[text]} onComplete={this.enableTerm.bind(this)}/>)
+    var newMessage = <TypedReact key={text} strings={[text]} onComplete={this.enableTerm.bind(this)}/>
+    this.setState({messageLog: [newMessage,...this.state.messageLog]})
   }
 
   componentDidUpdate() {
@@ -84,14 +85,14 @@ class App extends Component {
               {hangman[this.state.hangmanState]}
             </div>
 
-            <div style={{height: "200px", overflow: "auto"}} ref={(ref) => {this.messageArea = ref}}>
-              {this.messageLog.map((itm,idx) => {
-                return <div key={idx}>{itm}</div>
-              })}
+            <div style={{height: "200px", overflow: "auto", overflowX: "wrap", display: "flex", flexDirection: "column-reverse"}} ref={(ref) => { this.messageArea = ref }}>
+              {this.state.messageLog}
+              
+              
             </div>
 
             <div>====================================================</div>
-            <div style={{height: "200px", overflow: "auto"}} ref={(ref) => {this.consoleArea = ref}}>
+            <div style={{height: "200px", overflow: "auto", overflowX: "wrap"}} ref={(ref) => {this.consoleArea = ref}}>
               <Console ref={ref => this.console = ref}
                 handler={this.commandParse.bind(this)}
                 autofocus={true}
