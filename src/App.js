@@ -45,7 +45,7 @@ class App extends Component {
   commandParse(text) {
     var answer = strings.questions[this.state.questionState].answer;
     
-    if(text.toUpperCase().localeCompare(answer.toUpperCase()) === 0) {
+    if(text.toUpperCase().includes(answer.toUpperCase())) {
       this.advanceQuestion();
     } else {
       this.advanceHangman();
